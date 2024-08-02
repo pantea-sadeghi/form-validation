@@ -36,7 +36,7 @@ function validatePhone() {
     return true;
 }
 
-function validateEmail(){
+function validateEmail() {
     var email = document.getElementById('contact-email').value;
     if (email.length == 0) {
         emailError.innerHTML = 'Email is required';
@@ -47,5 +47,17 @@ function validateEmail(){
         return false;
     }
     emailError.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
+    return true;
+}
+
+function validateMessage() {
+    var message = document.getElementById('contact-message').value;
+    var required = 10;
+    var left = required - message.length;
+    if (left > 0) {
+        messageError.innerHTML = left + 'more characters required';
+        return false;
+    }
+    messageError.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
     return true;
 }
