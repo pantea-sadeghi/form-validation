@@ -61,3 +61,12 @@ function validateMessage() {
     messageError.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
     return true;
 }
+
+function validateForm(){
+    if(!validateName() || !validatePhone() || !validateEmail() || !validateMessage()){
+        submitError.style.display = 'block';
+        submitError.innerHTML = 'please fix error to submit';
+        setTimeout(function(){submitError.style.display = 'none';},3000)
+        return false;
+    }
+}
